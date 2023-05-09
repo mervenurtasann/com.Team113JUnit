@@ -41,15 +41,19 @@ public class C05_Assertions {
         String actualUrl = driver.getCurrentUrl();
 
         Assert.assertEquals(expectedUrl, actualUrl);
+
+        driver.quit();
     }
 
     @Test
     public void test02() {
         // ○ titleTest => Sayfa başlığının "Rest" içermediğini(contains) test edin
+        mahserin4Atlisi();
         String unExpectedIcerik = "Rest";
         String actualTitle = driver.getTitle();
 
         Assert.assertFalse(actualTitle.contains(unExpectedIcerik));
+        driver.quit();
     }
 
 
@@ -60,9 +64,10 @@ public class C05_Assertions {
         //      ○ logoTest => BestBuy logosunun görüntülendigini test edin
         mahserin4Atlisi();
 
-        WebElement logoBestBuyElementı= driver.findElement(By.xpath("(//img[@alt='Best Buy Logo'])[1]"));
+        WebElement logoBestBuyElementi= driver.findElement(By.xpath("(//img[@alt='Best Buy Logo'])[1]"));
 
-        Assert.assertTrue(logoBestBuyElementı.isDisplayed());
+        Assert.assertTrue(logoBestBuyElementi.isDisplayed());
+        driver.quit();
 
 
     }
@@ -71,7 +76,9 @@ public class C05_Assertions {
     public void test04(){
         mahserin4Atlisi();
         //      ○ FrancaisLinkTest => Fransizca Linkin görüntülendiğini test edin
-        WebElement   francaisLinkTesElementı=driver.findElement(By.className("is-active"));
-        Assert.assertTrue(francaisLinkTesElementı.isDisplayed());
+        WebElement   francaisLinkTesElementi=driver.findElement(By.className("is-active"));
+        Assert.assertTrue(francaisLinkTesElementi.isDisplayed());
+
+        driver.quit();
     }
 }
